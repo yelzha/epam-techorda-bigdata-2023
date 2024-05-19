@@ -102,9 +102,10 @@
 * Azure Big Data Processing: HDInsight, Synapse. 
 * Azure Data Factory. Databricks.
 
-## Module 12. Big Data Project-based Training
+## [Module 12. Big Data Project-based Training](https://github.com/yelzha/epam-techorda-bigdata-2023/tree/main/capstone-project)
 * Databricks
 * Azure Data Lake Gen2
 * Spark
 * Delta Table
-[Link](https://github.com/yelzha/epam-techorda-bigdata-2023/tree/main/capstone-project)
+
+
