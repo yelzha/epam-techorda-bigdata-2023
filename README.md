@@ -1,5 +1,8 @@
 # EPAM Tech Orda Big Data Course
 
+![image](https://github.com/yelzha/epam-techorda-bigdata-2023/assets/54392243/576e8319-e5a7-4c2e-9372-b496d739faab)
+
+
 ## Module 1. Introduction into Data
 * What Is a Data Engineer? 
 * Data Engineering Lifecycle: Main Stages. 
@@ -99,4 +102,9 @@
 * Azure Big Data Processing: HDInsight, Synapse. 
 * Azure Data Factory. Databricks.
 
-## Module 11. Big Data Project-based Training
+## Module 12. Big Data Project-based Training
+* Databricks
+* Azure Data Lake Gen2
+* Spark
+* Delta Table
+[Link](https://github.com/yelzha/epam-techorda-bigdata-2023/tree/main/capstone-project)
