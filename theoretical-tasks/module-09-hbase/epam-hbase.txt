@@ -1,0 +1,98 @@
+put 'employees', '1', 'personal_data:first_name', 'Albert'
+put 'employees', '1', 'personal_data:surname', 'Einstein'
+put 'employees', '1', 'personal_data:age', '23'
+put 'employees', '1', 'professional_data:role', 'Junior Developer'
+put 'employees', '1', 'professional_data:expertise', 'Data Engineer'
+
+put 'employees', '2', 'personal_data:first_name', 'Alan'
+put 'employees', '2', 'personal_data:surname', 'Walker'
+put 'employees', '2', 'personal_data:age', '33'
+put 'employees', '2', 'professional_data:role', 'Middle Developer'
+put 'employees', '2', 'professional_data:expertise', 'Data Software Engineer'
+
+put 'employees', '3', 'personal_data:first_name', 'Robert'
+put 'employees', '3', 'personal_data:surname', 'Wayne'
+put 'employees', '3', 'personal_data:age', '26'
+put 'employees', '3', 'professional_data:role', 'Strong Middle Developer'
+put 'employees', '3', 'professional_data:expertise', 'Data Analytics Engineer'
+
+put 'employees', '4', 'personal_data:first_name', 'Hello'
+put 'employees', '4', 'personal_data:surname', 'Helloson'
+put 'employees', '4', 'personal_data:age', '28'
+put 'employees', '4', 'professional_data:role', 'Senior Manager'
+put 'employees', '4', 'professional_data:expertise', 'Product Manager'
+
+put 'employees', '5', 'personal_data:first_name', 'Henry'
+put 'employees', '5', 'personal_data:surname', 'Johnson'
+put 'employees', '5', 'personal_data:age', '35'
+put 'employees', '5', 'professional_data:role', 'Middle Manager'
+put 'employees', '5', 'professional_data:expertise', 'Project Manager'
+
+put 'employees', '6', 'personal_data:first_name', 'Steven'
+put 'employees', '6', 'personal_data:surname', 'Kosinski'
+put 'employees', '6', 'personal_data:age', '40'
+put 'employees', '6', 'professional_data:role', 'Lead Developer'
+put 'employees', '6', 'professional_data:expertise', 'Data Engineer'
+
+put 'employees', '7', 'personal_data:first_name', 'Carlson'
+put 'employees', '7', 'personal_data:surname', 'fromRoof'
+put 'employees', '7', 'personal_data:age', '31'
+put 'employees', '7', 'professional_data:role', 'Junior Developer'
+put 'employees', '7', 'professional_data:expertise', 'Big Data'
+
+put 'employees', '8', 'personal_data:first_name', 'Octavian'
+put 'employees', '8', 'personal_data:surname', 'August'
+put 'employees', '8', 'personal_data:age', '40'
+put 'employees', '8', 'professional_data:role', 'Technical Director'
+put 'employees', '8', 'professional_data:expertise', 'Big Data'
+
+put 'employees', '9', 'personal_data:first_name', 'Julian'
+put 'employees', '9', 'personal_data:surname', 'Caesar'
+put 'employees', '9', 'personal_data:age', '46'
+put 'employees', '9', 'professional_data:role', 'Junior Manager'
+put 'employees', '9', 'professional_data:expertise', 'Product Manager'
+
+put 'employees', '10', 'personal_data:first_name', 'Gilbert'
+put 'employees', '10', 'personal_data:surname', 'George'
+put 'employees', '10', 'personal_data:age', '42'
+put 'employees', '10', 'professional_data:role', 'Senior Developer'
+put 'employees', '10', 'professional_data:expertise', 'Database Manager'
+
+
+put 'employees', '3', 'personal_data:age', '55'
+put 'employees', '3', 'professional_data:role', 'Senior HR'
+
+
+get 'employees', '3', {COLUMN => 'personal_data', VERSIONS => 3}
+get 'employees', '3', {COLUMN => 'professional_data', VERSIONS => 3}
+
+
+
+get 'employees', '3', {COLUMNS => ['personal_data', 'professional_data'], VERSIONS => 3}
+
+scan 'employees', {FILTER => "RowFilter(=,'binary:3')", VERSIONS => 3}
+
+scan 'employees', {COLUMNS => []}
+
+scan 'employees', { FILTER => "SingleColumnValueFilter('personal_data', 'age', >=, 'binary:35') AND MultipleColumnPrefixFilter('professional_data', 'role')" }
+
+
+
+
+scan 'employees', { FILTER => "SingleColumnValueFilter('personal_data', 'age', >=, 'binary:40')" }
+scan 'employees', { FILTER => "SingleColumnValueFilter('personal_data', 'age', >=, 'binary:40')" }
+
+
+scan 'employees', { FILTER => "SingleColumnValueFilter('personal_data', 'age', >=, 'binary:35') AND MultipleColumnPrefixFilter('professional_data', 'role')" }
+
+count 'employees', { FILTER => "SingleColumnValueFilter('personal_data', 'age', <, 'binary:40')" }
+
+
+
+get 'employees', '3', {COLUMN => 'personal_data:age', VERSIONS => 3}
+
+get 'employees', '3', {COLUMN => 'personal_data:age', VERSIONS => 4}
+
+disable 'employees'
+drop 'employees'
+exists 'employees'
