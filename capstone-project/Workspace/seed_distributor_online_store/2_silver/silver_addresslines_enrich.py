@@ -29,7 +29,7 @@ logger = init_logger(dbutils.widgets.get('task'))
 
 def get_address_info(address):
     try:
-        g = geocoder.bing(address, key='Aq_LUq5E6MHRgYGwGSj0GNir7jKS_vZgDfRBqmBjpBNxkN9P5tXbQYA_hruk1XdS')
+        g = geocoder.bing(address, key='YOUR-API-KEY')
         data = g.json
         return (
             data['lat'] if 'lat' in data else None,
